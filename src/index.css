@@ -1,0 +1,7 @@
+@import './assets/css/reset.css';
+@import './assets/css/variable.css';
+@import './assets/font/font.css';
+
+body{
+    font-family: 'Manrope', sans-serif;
+}

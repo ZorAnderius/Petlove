@@ -1,8 +1,9 @@
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import { ROUTES } from "./helpers/constants/ROUTES.js";
 import Layout from "./components/Layout/Layout.jsx";
+import "modern-normalize";
 import "./App.css";
-import { lazy } from "react";
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const AuthPage = lazy(() => import("./pages/AuthPage/AuthPage"));
