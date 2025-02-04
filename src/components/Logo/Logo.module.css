@@ -1,10 +1,8 @@
 .logo-container {
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -1.12px;
   display: flex;
   align-items: flex-end;
+  line-height: 1;
+  letter-spacing: -1.12px;
 }
 
 .logo {
@@ -13,8 +11,8 @@
 
 .logo-home,
 .logo-home-txt {
+  font-weight: 800;
   color: var(--secondary-txt-clr);
-  
 }
 
 .logo-txt {

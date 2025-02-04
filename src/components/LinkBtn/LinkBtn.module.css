@@ -1,0 +1,31 @@
+.link-btn {
+  color: inherit;
+  border-radius: 30px;
+}
+
+.login,
+.login-home {
+  color: var(--secondary-txt-clr);
+  padding: 15px 35px;
+}
+
+.login {
+  background-color: var(--primary-clr);
+  border: none;
+}
+
+.login-home {
+  border: 1px solid var(--border-home-clr);
+}
+
+.register {
+  padding: 15px 20px;
+  background-color: var(--secondary-clr);
+  color: var(--primary-clr);
+}
+
+.user-bar-wrap {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}

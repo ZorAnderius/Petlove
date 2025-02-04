@@ -3,14 +3,18 @@
   --secondary-clr: #fff4df;
   --primary-txt-clr: #262626;
   --secondary-txt-clr: #ffffff;
-  --inactive-secondary--txt-clr: #26262680;
+  --inactive-secondary--txt-clr: rgba(38, 38, 38, 0.502);
   --input-line-clr: rgba(38, 38, 38, 0.15);
+  --border-home-clr: rgba(255, 255, 255, 0.40);
 
   --icon-primary-blue-clr: #54adff;
   --icon-secondary-blue-clr: rgba(84, 173, 255, 0.1);
-  --icon-primary-red-clr: #f43f5e;
   --icon-secondary-red-clr: rgba(244, 63, 94, 0.1);
+  --icon-primary-red-clr: #f43f5e;
   --icon-success-clr: #08aa83;
   --icon-error-clr: #ef2447;
   --icon-edit-bg-clr: #fbe7c1;
+
+  --transition-time: 0.25s;
+  --transition-func: ease-in;
 }
