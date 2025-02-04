@@ -12,7 +12,7 @@ const Header = () => {
   const location = useLocation();
   const isHome = location.pathname === ROUTES.HOME;
   return (
-    <header className={styles['header']}>
+    <header className={clsx(styles['header'], isHome && styles['home'])}>
       <Container>
         <nav
           className={clsx(
