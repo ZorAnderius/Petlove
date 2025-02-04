@@ -2,9 +2,9 @@ import { ROUTES } from "../../helpers/constants/ROUTES.js";
 import LinkBtn from "../LinkBtn/LinkBtn.jsx";
 import styles from "./UserNav.module.css";
 
-const UserNav = () => {
+const UserNav = ({location}) => {
   return (
-    <ul className={styles}>
+    <ul className={styles['user-nav']}>
       <li>
         <LinkBtn direction={ROUTES.HOME}>Log Out</LinkBtn>
       </li>

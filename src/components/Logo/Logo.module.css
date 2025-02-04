@@ -1,0 +1,22 @@
+.logo-container {
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -1.12px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.logo {
+  color: var(--primary-clr);
+}
+
+.logo-home,
+.logo-home-txt {
+  color: var(--secondary-txt-clr);
+  
+}
+
+.logo-txt {
+  color: var(--primary-txt-clr);
+}

@@ -1,0 +1,17 @@
+.header {
+  padding: 32px;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list-other {
+  padding: 0 32px;
+}
+
+.nav-list-home {
+  padding: 0 64px;
+}

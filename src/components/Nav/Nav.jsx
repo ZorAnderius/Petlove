@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 import styles from "./Nav.module.css";
 import { ROUTES } from "../../helpers/constants/ROUTES.js";
 
-const Nav = () => {
+const Nav = ({location}) => {
   return (
-    <ul className={styles}>
+    <ul className={styles['routes-nav']}>
       <li>
         <NavLink to={ROUTES.NEWS}>News</NavLink>
       </li>

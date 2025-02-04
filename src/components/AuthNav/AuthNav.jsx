@@ -4,7 +4,7 @@ import styles from "./AuthNav.module.css";
 
 const AuthNav = () => {
   return (
-    <ul className={styles}>
+    <ul className={styles['auth-nav']}>
       <li>
         <LinkBtn direction={ROUTES.REGISTER} >Log In</LinkBtn>
       </li>
