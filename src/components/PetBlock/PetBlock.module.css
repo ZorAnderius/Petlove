@@ -1,0 +1,60 @@
+.pet-block-container {
+  width: 100%;
+  position: relative;
+  height: 81.75vh;
+  background-color: var(--primary-clr);
+  border-radius: 60px;
+  display: flex;
+  align-items: end;
+}
+
+.cat,
+.dog {
+  position: relative;
+  width: 536px;
+  height: 632px;
+  background-repeat: none;
+  background-size: cover;
+  background-position: bottom;
+  z-index: 5;
+}
+
+.cat {
+  bottom: 0;
+  left: 55%;
+  transform: translateX(-50%);
+  background-image: image-set(
+    url('../../assets/images/authRegister/desktop_1x.avif') type('image/avif'),
+    url('../../assets/images/authRegister/desktop_1x.webp') type('image/webp'),
+    url('../../assets/images/authRegister/desktop_1x.png') type('image/png')
+  );
+}
+
+.dog {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: image-set(
+    url('../../assets/images/authLogin/desktop_1x.avif') type('image/avif'),
+    url('../../assets/images/authLogin/desktop_1x.webp') type('image/webp'),
+    url('../../assets/images/authLogin/desktop_1x.png') type('image/png')
+  );
+}
+
+@media screen and (min-resolution: 192dpi) {
+  .cat {
+    background-image: image-set(
+      url('../../assets/images/authRegister/desktop_2x.avif') type('image/avif'),
+      url('../../assets/images/authRegister/desktop_2x.webp') type('image/webp'),
+      url('../../assets/images/authRegister/desktop_2x.png') type('image/png')
+    );
+  }
+
+  .dog {
+    background-image: image-set(
+      url('../../assets/images/authLogin/desktop_2x.avif') type('image/avif'),
+      url('../../assets/images/authLogin/desktop_2x.webp') type('image/webp'),
+      url('../../assets/images/authLogin/desktop_2x.png') type('image/png')
+    );
+  }
+}

@@ -1,0 +1,6 @@
+.auth-container {
+  width: 100%;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(2, 1fr);
+}

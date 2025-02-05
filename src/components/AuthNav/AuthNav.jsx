@@ -8,12 +8,12 @@ const AuthNav = ({ location }) => {
   return (
     <ul className={clsx(styles['auth-nav'], location && styles['home'])}>
       <li>
-        <LinkBtn type={`login${prefix}`} direction={ROUTES.REGISTER}>
+        <LinkBtn type={`login${prefix}`} direction={ROUTES.LOGIN}>
           Log In
         </LinkBtn>
       </li>
       <li>
-        <LinkBtn type='register' direction={ROUTES.LOGIN}>
+        <LinkBtn type="register" direction={ROUTES.REGISTER}>
           Registration
         </LinkBtn>
       </li>
