@@ -1,5 +1,38 @@
 .register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 16px;
   width: 100%;
   height: 81.75vh;
   border-radius: 60px;
+  background-color: var(--secondary-txt-clr);
+  color: var(--primary-txt-clr);
+  padding: 0 84px;
+}
+
+.auth-subtext {
+  padding-bottom: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.36px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.auth-nav-container {
+  align-self: center;
+  display: flex;
+  color: var(--inactive-secondary--txt-clr);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+  letter-spacing: -0.42px;
 }

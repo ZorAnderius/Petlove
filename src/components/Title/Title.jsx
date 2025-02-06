@@ -1,7 +1,7 @@
 import styles from './Title.module.css';
 
-const Title = ({ children, key = 1, style = '' }) => {
-  switch (key) {
+const Title = ({ value = 1, style = '', children }) => {
+  switch (value) {
     case 1:
       return <h1 className={styles[style]}>{children}</h1>;
     case 2:

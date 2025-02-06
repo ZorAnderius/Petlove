@@ -11,3 +11,23 @@
   transform: translateX(-50%);
   z-index: 2;
 }
+
+.eye,
+.eye-off {
+  fill: var(--secondary-txt-clr);
+  stroke: var(--pet-block-bg);
+}
+
+.cross-small {
+  stroke: var(--icon-error-clr);
+}
+
+.check {
+  fill: var(--secondary-txt-clr);
+  stroke: var(--icon-success-clr);
+}
+
+svg use {
+  width: 100%;
+  height: 100%;
+}

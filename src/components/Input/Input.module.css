@@ -1,0 +1,31 @@
+.input-container {
+  position: relative;
+  outline: none;
+  border: none;
+}
+
+input::placeholder {
+  text-transform: capitalize;
+  color: var(--inactive-secondary--txt-clr);
+}
+
+.auth-input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 30px;
+  border: 1px solid var(--input-line-clr);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.48px;
+}
+
+.icons-container {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}

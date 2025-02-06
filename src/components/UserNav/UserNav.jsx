@@ -15,13 +15,13 @@ const UserNav = ({ location }) => {
     <ul className={styles['user-nav']}>
       {!location && (
         <li>
-          <Button name="logout" handleClick={handleClick}>
+          <Button style="logout" handleClick={handleClick}>
             Log Out
           </Button>
         </li>
       )}
       <li>
-        <LinkBtn direction={ROUTES.PROFILE} type='user-bar-wrap'>
+        <LinkBtn direction={ROUTES.PROFILE} type="user-bar-wrap">
           <UserBar />
         </LinkBtn>
       </li>

@@ -8,3 +8,24 @@
   font-size: 16px;
   text-transform: uppercase;
 }
+
+.auth-submit {
+  text-align: center;
+  margin-top: 48px;
+  padding: 16px 0;
+  color: var(--secondary-txt-clr);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.48px;
+  text-transform: uppercase;
+  border-radius: 30px;
+  background-color: var(--primary-clr);
+  border: none;
+}
+
+.icon-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
