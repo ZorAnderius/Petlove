@@ -8,7 +8,7 @@ export const getNews = createAsyncThunk('news/getNews', async (_, thunkAPI) => {
         limit: 6,
       },
     });
-    console.log(response);
+    return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
   }
