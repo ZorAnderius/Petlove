@@ -1,6 +1,5 @@
 import { useId } from 'react';
 import styles from './Input.module.css';
-import Icon from '../Icon/Icon.jsx';
 
 const Input = ({
   register,
@@ -20,11 +19,7 @@ const Input = ({
         {...register(label, { required })}
         placeholder={label}
       />
-      <div className={styles['icons-container']}>
-        <Icon name="check" size={22} />
-        <Icon name="cross-small" size={22} />
-        {children}
-      </div>
+      {children}
     </label>
   );
 };

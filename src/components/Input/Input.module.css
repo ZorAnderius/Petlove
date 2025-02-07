@@ -19,13 +19,3 @@ input::placeholder {
   line-height: 1.25;
   letter-spacing: -0.48px;
 }
-
-.icons-container {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}

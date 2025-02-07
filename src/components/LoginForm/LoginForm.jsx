@@ -1,12 +1,12 @@
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 import Button from '../Button/Button.jsx';
-import Input from '../Input/Input.jsx';
 import LinkBtn from '../LinkBtn/LinkBtn.jsx';
 import Title from '../Title/Title.jsx';
-import styles from './LoginForm.module.css';
 import Icon from '../Icon/Icon.jsx';
-import { useState } from 'react';
 import { ROUTES } from '../../helpers/constants/ROUTES.js';
+import InputValidation from '../InputValidation/InputValidation.jsx';
+import styles from './LoginForm.module.css';
 
 const LoginForm = () => {
   const { register, handleSubmit } = useForm();
@@ -28,34 +28,38 @@ const LoginForm = () => {
         Welcome! Please enter your credentials to login to the platform:
       </p>
       <form className={styles['auth-form']} onSubmit={handleSubmit(onSubmit)}>
-        <Input
+        <InputValidation
           type="email"
           label="email"
           style="auth-input"
           register={register}
           required
         />
-        <Input
+        <InputValidation
           type={isVisible ? 'text' : 'password'}
           register={register}
           label="password"
           style="auth-input"
           required
         >
-          <Button type="button" style='icon-btn' handleClick={handleToggleBtn}>
+          <Button type="button" style="icon-btn" handleClick={handleToggleBtn}>
             {isVisible ? (
               <Icon name="eye" size={22} />
             ) : (
               <Icon name="eye-off" size={22} />
             )}
           </Button>
-        </Input>
+        </InputValidation>
 
-        <Button type='submit' style="auth-submit">Log In</Button>
+        <Button type="submit" style="auth-submit">
+          Log In
+        </Button>
       </form>
       <div className={styles['auth-nav-container']}>
         <p>Don’t have an account? </p>
-        <LinkBtn direction={ROUTES.REGISTER} type='auth-link'>Register</LinkBtn>
+        <LinkBtn direction={ROUTES.REGISTER} type="auth-link">
+          Register
+        </LinkBtn>
       </div>
     </div>
   );

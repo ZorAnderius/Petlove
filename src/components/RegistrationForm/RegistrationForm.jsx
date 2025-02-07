@@ -2,11 +2,11 @@ import { useForm } from 'react-hook-form';
 import Title from '../Title/Title.jsx';
 import styles from './RegistrationForm.module.css';
 import { useState } from 'react';
-import Input from '../Input/Input.jsx';
 import Icon from '../Icon/Icon.jsx';
 import Button from '../Button/Button.jsx';
 import LinkBtn from '../LinkBtn/LinkBtn.jsx';
 import { ROUTES } from '../../helpers/constants/ROUTES.js';
+import InputValidation from '../InputValidation/InputValidation.jsx';
 
 const RegistrationForm = () => {
   const { register, handleSubmit } = useForm();
@@ -32,21 +32,21 @@ const RegistrationForm = () => {
         Thank you for your interest in our platform.
       </p>
       <form className={styles['auth-form']} onSubmit={handleSubmit(onSubmit)}>
-        <Input
+        <InputValidation
           type="text"
           label="name"
           style="auth-input"
           register={register}
           required
         />
-        <Input
+        <InputValidation
           type="email"
           label="email"
           style="auth-input"
           register={register}
           required
         />
-        <Input
+        <InputValidation
           type={isVisibleInput1 ? 'text' : 'password'}
           style="auth-input"
           label="password"
@@ -65,8 +65,8 @@ const RegistrationForm = () => {
               <Icon name="eye-off" size={22} />
             )}
           </Button>
-        </Input>
-        <Input
+        </InputValidation>
+        <InputValidation
           type={isVisibleInput2 ? 'text' : 'password'}
           label="Confirm password"
           style="auth-input"
@@ -85,7 +85,7 @@ const RegistrationForm = () => {
               <Icon name="eye-off" size={22} />
             )}
           </Button>
-        </Input>
+        </InputValidation>
 
         <Button type="submit" style="auth-submit">
           Registration
