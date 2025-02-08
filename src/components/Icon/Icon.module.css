@@ -1,3 +1,7 @@
+svg {
+  flex-shrink: 0;
+}
+
 .heart-circle,
 .user {
   fill: currentColor;
@@ -19,7 +23,7 @@
 }
 
 .cross-small {
-  stroke: var(--icon-error-clr);
+  stroke: currentColor;
 }
 
 .check {
@@ -30,4 +34,9 @@
 svg use {
   width: 100%;
   height: 100%;
+}
+
+.search {
+  fill: var(--secondary-txt-clr);
+  stroke: var(--primary-txt-clr);
 }

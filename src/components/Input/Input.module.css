@@ -1,5 +1,8 @@
 .input-container {
   position: relative;
+}
+
+input {
   outline: none;
   border: none;
 }
@@ -9,13 +12,22 @@ input::placeholder {
   color: var(--inactive-secondary--txt-clr);
 }
 
-.auth-input {
+.auth-input,
+.search-input {
   width: 100%;
-  padding: 16px;
   border-radius: 30px;
   border: 1px solid var(--input-line-clr);
   font-size: 16px;
   font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.48px;
+}
+
+.auth-input {
+  padding: 16px;
+}
+
+.search-input {
+  padding: 14px;
+  background-color: transparent;
 }

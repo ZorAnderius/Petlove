@@ -1,0 +1,16 @@
+.search-form {
+  position: relative;
+  max-width: 230px;
+  width: 100%;
+}
+
+.btn-form-container {
+  padding: 0;
+  border: none;
+  position: absolute;
+  color: var(--primary-txt-clr);
+  top: 14px;
+  right: 15px;
+  display: flex;
+  gap: 8px;
+}

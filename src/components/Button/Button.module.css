@@ -24,7 +24,10 @@
   border: none;
 }
 
-.icon-btn {
+.icon-btn,
+.clear-btn,
+.search-btn {
+  padding: 0;
   background-color: transparent;
   border: none;
   cursor: pointer;
