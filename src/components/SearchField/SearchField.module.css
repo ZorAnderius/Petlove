@@ -14,3 +14,7 @@
   display: flex;
   gap: 8px;
 }
+
+.news_search {
+  justify-self: end;
+}

@@ -56,3 +56,7 @@
   text-underline-offset: auto;
   text-underline-position: from-font;
 }
+
+.news-item-link {
+  color: var(--primary-clr);
+}

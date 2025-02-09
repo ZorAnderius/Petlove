@@ -5,8 +5,9 @@ import Input from '../Input/Input.jsx';
 import Button from '../Button/Button.jsx';
 import Icon from '../Icon/Icon.jsx';
 import styles from './SearchField.module.css';
+import clsx from 'clsx';
 
-const SearchField = ({ action }) => {
+const SearchField = ({ action, style }) => {
   const [isVisible, setIsVisible] = useState(false);
   const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ const SearchField = ({ action }) => {
 
   return (
     <form
-      className={styles['search-form']}
+      className={clsx(styles['search-form'], style && styles[style])}
       onSubmit={handleSubmit(handleSubmitSearch)}
       onChange={handleChange}
     >

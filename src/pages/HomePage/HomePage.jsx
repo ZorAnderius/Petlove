@@ -5,7 +5,7 @@ import styles from './HomePage.module.css';
 const HomePage = () => {
   return (
     <main className={styles}>
-      <Section name='home'>
+      <Section style="home">
         <Container>
           <div className={styles['hero-wrap']}>
             <div className={styles['hero-txt-container']}>
