@@ -3,14 +3,16 @@
   --secondary-clr: #fff4df;
   --primary-txt-clr: #262626;
   --secondary-txt-clr: #ffffff;
-  --inactive-secondary--txt-clr: rgba(38, 38, 38, 0.50);
+  --inactive-secondary--txt-clr: rgba(38, 38, 38, 0.5);
   --input-line-clr: rgba(38, 38, 38, 0.15);
-  --border-home-clr: rgba(255, 255, 255, 0.40);
-  --btn-hover-clr: #F9B020;
-  --pet-block-bg: #F7BF50;
-  --body-bg-clr: #F9F9F9;
-  --third-txt-clr: rgba(38, 38, 38, 0.80);
-
+  --border-home-clr: rgba(255, 255, 255, 0.4);
+  --btn-hover-clr: #f9b020;
+  --pet-block-bg: #f7bf50;
+  --body-bg-clr: #f9f9f9;
+  --third-txt-clr: rgba(38, 38, 38, 0.8);
+  --pagination-disable-clr: rgba(38, 38, 38, 0.05);
+  --pagination-active-clr: rgba(38, 38, 38, 0.2);
+  
   --icon-primary-blue-clr: #54adff;
   --icon-secondary-blue-clr: rgba(84, 173, 255, 0.1);
   --icon-secondary-red-clr: rgba(244, 63, 94, 0.1);

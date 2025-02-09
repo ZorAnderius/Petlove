@@ -32,3 +32,23 @@
   border: none;
   cursor: pointer;
 }
+
+.pagination-btn {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--pagination-active-clr);
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--primary-txt-clr);
+}
+
+.disabled {
+  color: var(--inactive-secondary--txt-clr);
+  border-color: var(--pagination-disable-clr);
+  cursor: auto;
+}

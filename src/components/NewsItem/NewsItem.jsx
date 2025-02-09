@@ -4,7 +4,6 @@ import Title from '../Title/Title.jsx';
 import styles from './NewsItem.module.css';
 
 const NewsItem = ({ newItem = {} }) => {
-  console.log(newItem);
   const { title, imgUrl, text, date, url } = newItem;
   return (
     <>

@@ -1,11 +1,13 @@
 import NewsItem from '../NewsItem/NewsItem.jsx';
 import Pagination from '../Pagination/Pagination.jsx';
 import { useSelector } from 'react-redux';
-import { selectNews } from '../../redux/news/selector.js';
+import { selectNews, selectTotalPage } from '../../redux/news/selector.js';
 import styles from './NewsList.module.css';
 
 const NewsList = ({ style }) => {
   const news = useSelector(selectNews);
+  const totalPages = useSelector(selectTotalPage);
+
   return (
     <div className={styles[style]}>
       <ul className={styles['news-list']}>
@@ -16,7 +18,7 @@ const NewsList = ({ style }) => {
             </li>
           ))}
       </ul>
-      <Pagination />
+      <Pagination totalPages={totalPages} currentPage={1} />
     </div>
   );
 };
