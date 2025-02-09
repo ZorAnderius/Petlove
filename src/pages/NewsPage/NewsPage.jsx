@@ -27,7 +27,7 @@ const NewsPage = () => {
 
   return (
     <main>
-      <Section style="news-section">
+      <Section style="main-section">
         <Container style="container64">
           <div className={styles['news-container']}>
             <Title style="news-title">News</Title>

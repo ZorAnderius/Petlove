@@ -1,0 +1,46 @@
+.friend-thumb {
+  padding-top: 20px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+}
+
+.friends-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-time {
+  align-self: flex-end;
+  padding: 8px;
+  border-radius: 30px;
+  background-color: var(--secondary-clr);
+  color: var(--primary-clr);
+}
+
+.friends-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 210px;
+}
+
+.info-item p {
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  color: var(--inactive-secondary--txt-clr);
+}

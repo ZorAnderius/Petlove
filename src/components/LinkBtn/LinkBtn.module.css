@@ -60,3 +60,15 @@
 .news-item-link {
   color: var(--primary-clr);
 }
+
+.friends-info-link {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--primary-txt-clr);
+  transition: color var(--transition-time) var(--transition-func);
+}
+
+.friends-info-link:is(:hover, :focus) {
+  color: var(--primary-clr);
+}
