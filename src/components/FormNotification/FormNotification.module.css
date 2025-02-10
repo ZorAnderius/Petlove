@@ -1,0 +1,20 @@
+.error-input,
+.password-notify {
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  margin-top: 4px;
+  margin-left: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.17;
+  letter-spacing: -0.36px;
+}
+
+.error-input {
+  color: var(--icon-error-clr);
+}
+
+.password-notify {
+  color: var(--icon-success-clr);
+}

@@ -31,3 +31,11 @@ input::placeholder {
   padding: 14px;
   background-color: transparent;
 }
+
+.success{
+  border-color: var(--icon-success-clr);
+}
+
+.error{
+  border-color: var(--icon-error-clr);
+}
