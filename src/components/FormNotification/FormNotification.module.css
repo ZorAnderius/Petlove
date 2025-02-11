@@ -1,5 +1,6 @@
 .error-input,
-.password-notify {
+.password-notify,
+.password-error-notify {
   position: absolute;
   bottom: -16px;
   left: 0;
@@ -11,7 +12,8 @@
   letter-spacing: -0.36px;
 }
 
-.error-input {
+.error-input,
+.password-error-notify {
   color: var(--icon-error-clr);
 }
 

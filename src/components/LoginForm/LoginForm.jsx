@@ -1,5 +1,5 @@
 import { FormProvider, useForm } from 'react-hook-form';
-import {  useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { ROUTES } from '../../helpers/constants/ROUTES.js';
 import { loginSchema } from '../../helpers/validationSchema/loginSchema.js';
@@ -23,7 +23,6 @@ const LoginForm = () => {
     formState: { errors, isSubmitted },
   } = methods;
 
-
   const [isVisible, setIsVisible] = useState(false);
 
   const isObjectNotEmpty = useMemo(() => isNotEmpty(errors), [errors]);
@@ -36,8 +35,9 @@ const LoginForm = () => {
     console.log(data);
   };
 
-  const hasSubmitAndValue = key => {
-    return !!((watch(key) === '' || watch(key)) && isSubmitted);
+  const hasSubmitAndValue = label => {
+    const value = watch(label);
+    return !!((value === '' || value) && isSubmitted);
   };
 
   return (

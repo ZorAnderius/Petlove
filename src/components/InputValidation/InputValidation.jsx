@@ -8,6 +8,7 @@ const InputValidation = ({
   label,
   error,
   showNotify,
+  isPasswordsMatches,
   style = '',
   type = 'text',
   children,
@@ -19,11 +20,12 @@ const InputValidation = ({
       label={label}
       style={style}
       showNotify={showNotify}
+      isPasswordsMatches={isPasswordsMatches}
       error={error}
       register={register}
     >
       <div className={styles['icons-container']}>
-        {isError ? (
+        {isError || isPasswordsMatches === 2 ? (
           <Icon name="cross-small" size={22} />
         ) : (
           showNotify(label) && <Icon name="check" size={22} />
@@ -36,6 +38,15 @@ const InputValidation = ({
           style="password-notify"
         />
       )}
+      {!isError &&
+        showNotify(label) &&
+        isPasswordsMatches === 2 &&
+        label === 'confirmPassword' && (
+          <FormNotification
+            message={'Passwords do not matches'}
+            style="password-error-notify"
+          />
+        )}
     </Input>
   );
 };

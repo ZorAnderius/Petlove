@@ -10,6 +10,7 @@ const Input = ({
   label,
   error,
   showNotify,
+  isPasswordsMatches,
   style = '',
   type = 'text',
   children,
@@ -23,10 +24,10 @@ const Input = ({
         type={type}
         className={clsx(
           styles[style],
-          showNotifyKey ? (!isError ? styles['success'] : styles['error']) : '',
+          showNotifyKey ? (!isError && isPasswordsMatches !== 2 ? styles['success'] : styles['error']) : '',
         )}
         id={labelId}
-        {...register(label)}
+        {...register(label.includes(' ') ? label.replace(/\s/g, '') : label)}
         placeholder={label}
       />
       {children}
