@@ -24,20 +24,26 @@ const Input = ({
         type={type}
         className={clsx(
           styles[style],
-          showNotifyKey ? (!isError && isPasswordsMatches !== 2 ? styles['success'] : styles['error']) : '',
+          showNotifyKey
+            ? !isError && isPasswordsMatches !== 2
+              ? styles['success']
+              : styles['error']
+            : '',
         )}
         id={labelId}
         {...register(label.includes(' ') ? label.replace(/\s/g, '') : label)}
         placeholder={label}
       />
       {children}
-      <ErrorMessage
-        errors={error}
-        name={label}
-        render={({ message }) => (
-          <FormNotification message={message} style="error-input" />
-        )}
-      />
+      {error && (
+        <ErrorMessage
+          errors={error}
+          name={label}
+          render={({ message }) => (
+            <FormNotification message={message} style="error-input" />
+          )}
+        />
+      )}
     </label>
   );
 };
