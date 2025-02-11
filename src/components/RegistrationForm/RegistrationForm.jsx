@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { FormProvider, useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import { useMemo, useState } from 'react';
 import { ROUTES } from '../../helpers/constants/ROUTES.js';
 import { isNotEmpty } from '../../helpers/check/isNotEmpty.js';
@@ -11,8 +12,10 @@ import Button from '../Button/Button.jsx';
 import LinkBtn from '../LinkBtn/LinkBtn.jsx';
 import InputValidation from '../InputValidation/InputValidation.jsx';
 import styles from './RegistrationForm.module.css';
+import { registerUser } from '../../redux/auth/operation.js';
 
 const RegistrationForm = () => {
+  const dispatch = useDispatch();
   const methods = useForm({
     resolver: yupResolver(registerSchema),
   });
@@ -34,7 +37,13 @@ const RegistrationForm = () => {
       return;
     }
     setIsPasswordMatches(3);
-    console.log(data);
+    dispatch(
+      registerUser({
+        name: data.name,
+        email: data.email,
+        password: data.password,
+      }),
+    );
   };
 
   const handleToggleVisible = e => {

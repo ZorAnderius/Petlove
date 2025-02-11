@@ -1,7 +1,13 @@
 import axios from 'axios';
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: 'https://petlove.b.goit.study/api',
 });
 
-export default api;
+export const setToken = token => {
+  api.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
+
+export const clearToken = () => {
+  api.defaults.headers.common.Authorization = '';
+};

@@ -11,8 +11,11 @@ import InputValidation from '../InputValidation/InputValidation.jsx';
 import styles from './LoginForm.module.css';
 import clsx from 'clsx';
 import { isNotEmpty } from '../../helpers/check/isNotEmpty.js';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../redux/auth/operation.js';
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
   const methods = useForm({
     resolver: yupResolver(loginSchema),
   });
@@ -31,8 +34,8 @@ const LoginForm = () => {
     setIsVisible(!isVisible);
   };
 
-  const onSubmit = data => {
-    console.log(data);
+  const onSubmit = ({ email, password }) => {
+    dispatch(loginUser({ email, password }));
   };
 
   const hasSubmitAndValue = label => {
