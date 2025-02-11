@@ -7,8 +7,11 @@ import Logo from '../Logo/Logo.jsx';
 import Nav from '../Nav/Nav.jsx';
 import UserNav from '../UserNav/UserNav.jsx';
 import styles from './Header.module.css';
+import { useSelector } from 'react-redux';
+import { selectIsLoggedIn } from '../../redux/auth/selector.js';
 
 const Header = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const location = useLocation();
   const isHome = location.pathname === ROUTES.HOME;
   return (
@@ -22,7 +25,7 @@ const Header = () => {
         >
           <Logo location={isHome} />
           <Nav location={isHome} />
-          <AuthNav location={isHome} />
+          {!isLoggedIn && <AuthNav location={isHome} />}
           <UserNav location={isHome} />
         </nav>
       </Container>

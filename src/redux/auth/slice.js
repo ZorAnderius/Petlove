@@ -6,7 +6,7 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    resetAuthState: (state, action) => {
+    resetAuthState: state => {
       state.token = '';
       state.isLoggedIn = false;
       state.currentUser = {};
