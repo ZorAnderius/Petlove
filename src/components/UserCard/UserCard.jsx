@@ -6,13 +6,13 @@ import styles from './UserCard.module.css';
 
 const UserCard = () => {
   return (
-    <div className={styles['user-container']}>
+    <aside className={styles['user-container']}>
       <UserBlock>
         <EditUserBtn />
       </UserBlock>
       <PetsBlock />
       <LogOutBtn style='profile'/>
-    </div>
+    </aside>
   );
 };
 
