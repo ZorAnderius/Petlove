@@ -72,3 +72,13 @@
 .friends-info-link:is(:hover, :focus) {
   color: var(--primary-clr);
 }
+
+.add-pet {
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: var(--secondary-txt-clr);
+  background-color: var(--primary-clr);
+}

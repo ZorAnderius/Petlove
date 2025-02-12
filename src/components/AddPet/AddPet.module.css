@@ -1,0 +1,11 @@
+.add-pets-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-pet-txt {
+  color: var(--secondary-txt-clr);
+  letter-spacing: -0.48px;
+}

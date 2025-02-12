@@ -40,3 +40,12 @@ svg use {
   fill: var(--secondary-txt-clr);
   stroke: var(--primary-txt-clr);
 }
+
+.edit {
+  stroke: currentColor;
+  fill: transparent;
+}
+
+.plus{
+  stroke: currentColor;
+}

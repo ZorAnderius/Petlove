@@ -1,12 +1,22 @@
-.logout {
+.logout,
+.profile-logout {
   padding: 15px 35px;
   border-radius: 30px;
-  background: var(--primary-clr);
   border: none;
-  color: var(--secondary-txt-clr);
   font: inherit;
   font-size: 16px;
   text-transform: uppercase;
+  align-self: start;
+}
+
+.profile-logout {
+  background-color: var(--secondary-clr);
+  color: var(--primary-clr);
+}
+
+.logout {
+  background-color: var(--primary-clr);
+  color: var(--secondary-txt-clr);
 }
 
 .auth-submit {
@@ -51,4 +61,39 @@
   color: var(--inactive-secondary--txt-clr);
   border-color: var(--pagination-disable-clr);
   cursor: auto;
+}
+
+.edit-plain-btn {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-clr);
+  color: var(--primary-clr);
+  border: none;
+  border-radius: 50%;
+}
+
+.avatar-container {
+  padding: 0;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  top: 0;
+  left: -4.75%;
+}
+
+.avatar-container p {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
 }

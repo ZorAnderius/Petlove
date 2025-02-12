@@ -1,9 +1,20 @@
-import styles from "./ProfilePage.module.css";
+import Section from '../../components/Section/Section.jsx';
+import Container from '../../components/Container/Container.jsx';
+import MyNotices from '../../components/MyNotices/MyNotices.jsx';
+import UserCard from '../../components/UserCard/UserCard.jsx';
+import styles from './ProfilePage.module.css';
 
-const ProfilePage = (params) => {
+const ProfilePage = () => {
   return (
     <main>
-      <h1 className={styles}>Profile Page</h1>
+      <Section>
+        <Container>
+          <div className={styles['profile-container']}>
+            <UserCard />
+            <MyNotices />
+          </div>
+        </Container>
+      </Section>
     </main>
   );
 };
