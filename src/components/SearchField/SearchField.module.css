@@ -18,3 +18,16 @@
 .news_search {
   justify-self: end;
 }
+
+.filter-notice {
+  max-width: 265px;
+}
+
+.filter-notice input {
+  background-color: var(--secondary-txt-clr);
+  border: none;
+}
+
+.filter-notice input::placeholder {
+  color: var(--primary-txt-clr);
+}

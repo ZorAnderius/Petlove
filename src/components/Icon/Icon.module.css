@@ -49,3 +49,8 @@ svg use {
 .plus{
   stroke: currentColor;
 }
+
+.chevron-down{
+  stroke: currentColor;
+  fill: var(--secondary-txt-clr);
+}

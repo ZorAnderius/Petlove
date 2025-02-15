@@ -19,7 +19,8 @@
   height: 52px;
 }
 
-.our-friends {
+.our-friends,
+.find-pet {
   color: var(--primary-txt-clr);
   font-size: 54px;
   font-weight: 700;

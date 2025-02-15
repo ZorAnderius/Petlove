@@ -1,0 +1,37 @@
+.search-select-form {
+  position: relative;
+}
+
+.location {
+  width: 227px;
+}
+
+.btn-form-container {
+  border: none;
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 14px;
+  right: 14px;
+}
+
+.option {
+  color: var(--select-option-clr);
+}
+
+.highlight-txt {
+  color: var(--primary-txt-clr);
+}
+
+.error-txt {
+  position: absolute;
+  bottom: -21px;
+  left: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.17;
+  letter-spacing: -0.36px;
+  color: var(--icon-error-clr);
+}
