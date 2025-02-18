@@ -15,7 +15,7 @@ export const customStyles = {
     padding: '0px',
     paddingLeft: '14px',
   }),
-  singleValue: (provided) => ({
+  singleValue: provided => ({
     ...provided,
     margin: '0px',
     paddingBottom: '2px',
@@ -37,5 +37,11 @@ export const customStyles = {
     marginTop: '8px',
     borderRadius: '15px',
     overflow: 'hidden',
+  }),
+  menuList: provided => ({
+    ...provided,
+    maxHeight: '216px',
+    overflow: 'hidden',
+    padding: '4px 0px',
   }),
 };

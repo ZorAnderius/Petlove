@@ -8,6 +8,7 @@ import { capitalize } from '../../helpers/formatter/capitalize.js';
 import { customStyles } from '../../helpers/customStyles/select.js';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { locationSchema } from '../../helpers/validationSchema/locationSchema.js';
+import MenuList from '../MenuList/MenuList.jsx';
 
 const searchSelectStyle = {
   ...customStyles,
@@ -100,6 +101,7 @@ const SearchSelect = ({ style, loadOptions }) => {
                 value={selectedOption || field.value}
                 placeholder={capitalize(style)}
                 loadOptions={loadFilterOptions}
+                components={{ MenuList }}
                 className={styles[style]}
                 onChange={option => {
                   handleChangeValue(option, field);

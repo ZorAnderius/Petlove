@@ -4,15 +4,17 @@ import clsx from 'clsx';
 import { capitalize } from '../../helpers/formatter/capitalize.js';
 import AsyncSelect from 'react-select/async';
 import { customStyles } from '../../helpers/customStyles/select.js';
+import MenuList from '../MenuList/MenuList.jsx';
 
 const SelectField = ({ style, label, loadOptions }) => {
   return (
     <AsyncSelect
       cacheOptions
+      autoFocus
       loadOptions={loadOptions}
       defaultOptions
       placeholder={capitalize(label)}
-      components={{ DropdownIndicator }}
+      components={{ DropdownIndicator, MenuList }}
       styles={{
         ...customStyles,
         option: (provided, state) => ({

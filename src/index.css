@@ -2,7 +2,7 @@
 @import './assets/css/variable.css';
 @import './assets/font/font.css';
 
-body{
-    font-family: 'Manrope', sans-serif;
-    background-color: var(--body-bg-clr);
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: var(--body-bg-clr);
 }

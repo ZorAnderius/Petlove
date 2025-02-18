@@ -13,7 +13,8 @@
   --pagination-disable-clr: rgba(38, 38, 38, 0.05);
   --pagination-active-clr: rgba(38, 38, 38, 0.2);
   --select-option-clr: rgba(38, 38, 38, 0.4);
-  --select-secondary-clr: rgba(38, 38, 38, 0.60);
+  --select-secondary-clr: rgba(38, 38, 38, 0.6);
+  --scrollbar-bg-clr: rgba(38, 38, 38, 0.08);
 
   --icon-primary-blue-clr: #54adff;
   --icon-secondary-blue-clr: rgba(84, 173, 255, 0.1);
