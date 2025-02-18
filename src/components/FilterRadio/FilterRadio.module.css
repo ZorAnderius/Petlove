@@ -1,0 +1,23 @@
+.radio-container {
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 30px;
+  background-color: var(--secondary-txt-clr);
+  text-transform: capitalize;
+  color: inherit;
+  transition: background-color var(--transition-time) var(--transition-func),
+    color var(--transition-time) var(--transition-func);
+}
+
+.radio-container:is(:focus, :hover),
+.radio-container.active {
+  background-color: var(--primary-clr);
+  color: var(--secondary-txt-clr);
+}
+
+.radio-input {
+  display: none;
+}
