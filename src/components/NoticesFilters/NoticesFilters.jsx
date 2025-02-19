@@ -12,7 +12,13 @@ import RadioForm from '../RadioForm/RadioForm.jsx';
 import Button from '../Button/Button.jsx';
 import { useEffect, useState } from 'react';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { getNotices } from '../../redux/notices/operation.js';
+import { selectCurrentPage } from '../../redux/notices/selector.js';
+
 const NoticesFilters = () => {
+  const dispatch = useDispatch();
+  const page = useSelector(selectCurrentPage);
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const [gender, setGender] = useState('');
@@ -42,6 +48,22 @@ const NoticesFilters = () => {
       resetTitleRef();
     }
   };
+
+  useEffect(() => {
+    const filter = {
+      keyword: title,
+      category: category?.label,
+      sex: gender?.label,
+      species: type?.label,
+      locationId: location?.value,
+      expensive: status === 'expensive' ? true : '',
+      cheap: status === 'cheap' ? true : '',
+      popular: status === 'popular' ? true : '',
+      unpopular: status === 'unpopular' ? true : '',
+      page,
+    };
+    dispatch(getNotices(filter));
+  }, [title, category, type, gender, location, status, page, dispatch]);
 
   useEffect(() => {
     setIsResetVisible(

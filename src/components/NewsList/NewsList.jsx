@@ -1,12 +1,23 @@
 import NewsItem from '../NewsItem/NewsItem.jsx';
 import Pagination from '../Pagination/Pagination.jsx';
-import { useSelector } from 'react-redux';
-import { selectNews, selectTotalPage } from '../../redux/news/selector.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { setPage } from '../../redux/news/slice.js';
+import {
+  selectCurrentPage,
+  selectNews,
+  selectTotalPage,
+} from '../../redux/news/selector.js';
 import styles from './NewsList.module.css';
 
 const NewsList = ({ style }) => {
+  const dispatch = useDispatch();
   const news = useSelector(selectNews);
+  const page = useSelector(selectCurrentPage);
   const totalPages = useSelector(selectTotalPage);
+
+  const handlePage = value => {
+    dispatch(setPage(value));
+  };
 
   return (
     <div className={styles[style]}>
@@ -18,7 +29,11 @@ const NewsList = ({ style }) => {
             </li>
           ))}
       </ul>
-      <Pagination totalPages={totalPages} currentPage={1} />
+      <Pagination
+        totalPages={totalPages}
+        page={page}
+        handlePage={handlePage}
+      />
     </div>
   );
 };
