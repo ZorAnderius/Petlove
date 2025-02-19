@@ -1,7 +1,14 @@
 .news-container {
-  min-width: 100%;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
+  row-gap: 60px;
+}
+
+.list-wrap {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
   row-gap: 60px;
 }
