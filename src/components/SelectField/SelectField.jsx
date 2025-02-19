@@ -6,7 +6,13 @@ import AsyncSelect from 'react-select/async';
 import { customStyles } from '../../helpers/customStyles/select.js';
 import MenuList from '../MenuList/MenuList.jsx';
 
-const SelectField = ({ style, label, loadOptions }) => {
+const SelectField = ({
+  style,
+  label,
+  loadOptions,
+  value,
+  handleChangeValue,
+}) => {
   return (
     <AsyncSelect
       cacheOptions
@@ -15,6 +21,8 @@ const SelectField = ({ style, label, loadOptions }) => {
       defaultOptions
       placeholder={capitalize(label)}
       components={{ DropdownIndicator, MenuList }}
+      onChange={handleChangeValue}
+      value={value}
       styles={{
         ...customStyles,
         option: (provided, state) => ({

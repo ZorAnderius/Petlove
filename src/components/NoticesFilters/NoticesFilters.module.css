@@ -19,3 +19,8 @@
   height: 1px;
   background-color: var(--separator-clr);
 }
+
+.radio-reset-container{
+  display: flex;
+  justify-content: space-between;
+}

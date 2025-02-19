@@ -2,17 +2,14 @@ import { v4 as uuid4 } from 'uuid';
 import { radioBtnNames } from '../../helpers/data/radioBtnNames.js';
 import FilterRadio from '../FilterRadio/FilterRadio.jsx';
 import styles from './RadioForm.module.css';
-import { useState } from 'react';
 
-const RadioForm = () => {
-  const [selected, setSelected] = useState('');
-
+const RadioForm = ({ value, handleChangeValue }) => {
   const handleChange = e => {
-    setSelected(e.target.value);
+    handleChangeValue(e.target.value);
   };
 
   const resetRadio = () => {
-    setSelected('');
+    handleChangeValue('');
   };
 
   return (
@@ -22,7 +19,7 @@ const RadioForm = () => {
           key={uuid4()}
           value={radioName}
           nameRadio="filterRadio"
-          selected={selected === radioName}
+          selected={value === radioName}
           resetRadio={resetRadio}
         />
       ))}

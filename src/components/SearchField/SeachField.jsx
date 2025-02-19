@@ -1,26 +1,32 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Input from '../Input/Input.jsx';
 import Button from '../Button/Button.jsx';
 import Icon from '../Icon/Icon.jsx';
 import styles from './SearchField.module.css';
 import clsx from 'clsx';
 
-const SearchField = ({ action, style }) => {
+const SearchField = ({ action, style, handleChangeValue, setResetRef }) => {
   const [isVisible, setIsVisible] = useState(false);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const dispatch = useDispatch();
 
   const handleSubmitSearch = data => {
     const validData = data?.search?.trim();
-    if (validData) dispatch(action(validData));
+    if (validData)
+      action ? dispatch(action(validData)) : handleChangeValue(validData);
   };
 
-  const handleClearFilter = () => {
-    dispatch(action(''));
+  const handleClearFilter = useCallback(() => {
+    action ? dispatch(action('')) : handleChangeValue('');
     setTimeout(() => setIsVisible(false), 0);
-  };
+    reset();
+  }, [handleChangeValue, dispatch, action, reset]);
+
+  useEffect(() => {
+    setResetRef && setResetRef(handleClearFilter);
+  }, [setResetRef, handleClearFilter]);
 
   const handleChange = e => {
     e?.target?.value?.trim() ? setIsVisible(true) : setIsVisible(false);

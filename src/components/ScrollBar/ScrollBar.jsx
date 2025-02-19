@@ -7,7 +7,6 @@ const menuHeaderStyle = {
 };
 
 const ScrollBar = ({ children }) => {
-  console.log(styles['perfect-scrollbar']);
   return (
     <PerfectScrollbar
       style={menuHeaderStyle}

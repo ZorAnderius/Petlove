@@ -1,3 +1,4 @@
+.reset,
 .logout,
 .profile-logout {
   padding: 15px 35px;
@@ -14,6 +15,7 @@
   color: var(--primary-clr);
 }
 
+.reset,
 .logout {
   background-color: var(--primary-clr);
   color: var(--secondary-txt-clr);

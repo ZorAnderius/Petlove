@@ -1,6 +1,6 @@
 import { useForm, Controller } from 'react-hook-form';
 import styles from './SearchSelect.module.css';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Button from '../Button/Button.jsx';
 import Icon from '../Icon/Icon.jsx';
 import AsyncSelect from 'react-select/async';
@@ -37,20 +37,19 @@ const highlightText = (text, query) => {
   );
 };
 
-const SearchSelect = ({ style, loadOptions }) => {
+const SearchSelect = ({ style, loadOptions, value, handleChangeValue }) => {
   const { control, handleSubmit, setValue } = useForm({
     resolver: yupResolver(locationSchema),
   });
   const [isVisible, setIsVisible] = useState(false);
   const [inputText, setInputText] = useState('');
-  const [selectedOption, setSelectedOption] = useState(null);
 
-  const handleClearFilter = () => {
+  const handleClearFilter = useCallback(() => {
     setIsVisible(false);
-    setSelectedOption(null);
+    handleChangeValue(null);
     setInputText('');
     setValue(style, null);
-  };
+  }, [handleChangeValue, setValue, style]);
 
   const handleInputChange = async (value, { action }) => {
     if (action === 'input-change') {
@@ -64,9 +63,9 @@ const SearchSelect = ({ style, loadOptions }) => {
     }
   };
 
-  const handleChangeValue = (option, field) => {
-    setSelectedOption(option);
-    setInputText(option ? option?.label : '');
+  const handleChange = (option, field) => {
+    handleChangeValue(option);
+    setInputText(option ? option?.label : inputText);
     setIsVisible(true);
     setValue(style, option ? option : null, {
       shouldValidate: true,
@@ -75,7 +74,6 @@ const SearchSelect = ({ style, loadOptions }) => {
   };
 
   const loadFilterOptions = inputValue => {
-    console.log(inputValue);
     if (inputValue.length >= 3) {
       return loadOptions(inputValue);
     }
@@ -84,6 +82,15 @@ const SearchSelect = ({ style, loadOptions }) => {
   const onSubmit = data => {
     console.log(data);
   };
+
+  useEffect(() => {
+    setInputText(value?.label);
+    value?.label ? setIsVisible(true) : setIsVisible(false);
+  }, [setInputText, value]);
+
+  useEffect(() => {
+    if (!value?.label) handleClearFilter();
+  }, [handleClearFilter, value]);
 
   return (
     <form
@@ -98,17 +105,17 @@ const SearchSelect = ({ style, loadOptions }) => {
             <label>
               <AsyncSelect
                 {...field}
-                value={selectedOption || field.value}
+                value={value}
                 placeholder={capitalize(style)}
                 loadOptions={loadFilterOptions}
                 components={{ MenuList }}
                 className={styles[style]}
                 onChange={option => {
-                  handleChangeValue(option, field);
+                  handleChange(option, field);
                 }}
                 onInputChange={handleInputChange}
                 menuIsOpen={
-                  inputText.length >= 3 && inputText !== selectedOption?.label
+                  inputText?.length >= 3 && inputText !== value?.label
                 }
                 formatOptionLabel={option => (
                   <div className={styles['option']}>
@@ -126,7 +133,7 @@ const SearchSelect = ({ style, loadOptions }) => {
                     borderRadius: '30px',
                     border: 'none',
                     boxShadow: state.isFocused
-                      ? fieldState?.error && inputText
+                      ? fieldState?.error && (inputText || value?.label)
                         ? '0 0 2px var(--icon-error-clr)'
                         : '0 0 2px var(--primary-clr)'
                       : 'none',
