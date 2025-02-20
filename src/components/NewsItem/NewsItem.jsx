@@ -1,4 +1,4 @@
-import { formatted_date } from '../../helpers/formatter/formatDate.js';
+import { formattedDateWithSeparator } from '../../helpers/formatter/formatDate.js';
 import LinkBtn from '../LinkBtn/LinkBtn.jsx';
 import Title from '../Title/Title.jsx';
 import styles from './NewsItem.module.css';
@@ -17,7 +17,9 @@ const NewsItem = ({ newItem = {} }) => {
         <p className={styles['news-item-txt']}>{text}</p>
       </div>
       <div className={styles['news-item-add-info']}>
-        <p className={styles['news-item-date']}>{formatted_date(date)}</p>
+        <p className={styles['news-item-date']}>
+          {formattedDateWithSeparator(date, '/')}
+        </p>
         <LinkBtn direction={url} newTab type="news-item-link">
           Read more
         </LinkBtn>

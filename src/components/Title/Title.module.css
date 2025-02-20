@@ -37,8 +37,16 @@
   letter-spacing: -0.8px;
 }
 
-.profile {
+.profile,
+.notice {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.33;
+}
+
+.notice {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: wrap;
+  height: 24px;
 }

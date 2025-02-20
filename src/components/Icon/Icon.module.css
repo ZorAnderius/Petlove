@@ -54,3 +54,12 @@ svg use {
   stroke: currentColor;
   fill: var(--secondary-txt-clr);
 }
+
+.star{
+  fill: var(--rating-clr);
+}
+
+.heart{
+  fill: transparent;
+  stroke: currentColor;
+}

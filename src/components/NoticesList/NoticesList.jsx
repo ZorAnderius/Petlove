@@ -1,11 +1,15 @@
+import { useSelector } from 'react-redux';
 import NoticesItem from '../NoticesItem/NoticesItem.jsx';
 import styles from './NoticesList.module.css';
+import { selectNotices } from '../../redux/notices/selector.js';
 
-const NoticesList = ({ notices }) => {
+const NoticesList = () => {
+  const notices = useSelector(selectNotices);
+  
   return notices ? (
-    <ul>
+    <ul className={styles['notices-list']}>
       {notices?.map(notice => (
-        <li key={notice._id}>
+        <li key={notice._id} className={styles['notices-item']}>
           <NoticesItem notice={notice} />
         </li>
       ))}

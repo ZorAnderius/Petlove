@@ -1,0 +1,89 @@
+.img-thumb {
+  width: 100%;
+  height: 178px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.img-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.txt-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--primary-txt-clr);
+  font-weight: 500;
+}
+
+.title-rating-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.rating-container {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.43;
+}
+
+.pet-info-list {
+  display: flex;
+  gap: 20px;
+}
+
+.pet-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--inactive-secondary--txt-clr);
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+}
+
+.pet-info-data {
+  color: var(--primary-txt-clr);
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: -0.24px;
+}
+
+.pet-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: Manrope;
+  margin-top: 8px;
+  width: 100%;
+  height: 36px;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.28px;
+}
+
+.pet-price {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.33;
+}
+
+.price-btn-nav-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pet-btn-container {
+  display: flex;
+  gap: 10px;
+  justify-content: stretch;
+}

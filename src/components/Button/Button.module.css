@@ -100,3 +100,41 @@
   text-underline-offset: auto;
   text-underline-position: from-font;
 }
+
+.notice-learn-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 0;
+  width: 100%;
+  background-color: var(--primary-clr);
+  color: var(--secondary-txt-clr);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.48px;
+  border: none;
+  border-radius: 30px;
+  transition: background-color var(--transition-time) var(--transition-func);
+}
+
+.notice-learn-more:is(:hover, :focus) {
+  background-color: var(--btn-hover-clr);
+}
+
+.notice-favorite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--secondary-clr);
+  color: var(--primary-clr);
+  transition: background-color var(--transition-time) var(--transition-func);
+}
+
+.notice-favorite:is(:hover, :focus) {
+  background-color: var(--icon-edit-bg-clr);
+}

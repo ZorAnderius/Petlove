@@ -1,5 +1,5 @@
 export const initialState = {
-  notices: {},
+  notices: [],
   totalPages: 0,
   page: 1,
 };

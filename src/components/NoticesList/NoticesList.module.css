@@ -1,3 +1,18 @@
+.notices-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+.notices-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  background-color: var(--secondary-txt-clr);
+  border-radius: 16px;
+}
+
 .no-notice-container {
   padding-top: 148px;
   display: flex;
