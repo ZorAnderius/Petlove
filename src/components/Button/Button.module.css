@@ -138,3 +138,12 @@
 .notice-favorite:is(:hover, :focus) {
   background-color: var(--icon-edit-bg-clr);
 }
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}

@@ -1,13 +1,19 @@
+import { useDispatch } from 'react-redux';
 import { formattedDateWithSeparator } from '../../helpers/formatter/formatDate.js';
 import { formatPrice } from '../../helpers/formatter/formatPrice.js';
 import Button from '../Button/Button.jsx';
 import Icon from '../Icon/Icon.jsx';
 import Title from '../Title/Title.jsx';
 import styles from './NoticesItem.module.css';
+import { openModal } from '../../redux/modal/slice.js';
 
 const NoticesItem = ({ notice }) => {
+  const dispatch = useDispatch();
+
+  const handleOpenModal = () => {
+    dispatch(openModal({ content: '', contentStyle: 'pet-info-modal' }));
+  };
   const {
-    // _id,
     species,
     category,
     price = 0,
@@ -65,8 +71,14 @@ const NoticesItem = ({ notice }) => {
           {price === 0 ? 'Free' : formatPrice(price)}
         </p>
         <div className={styles['pet-btn-container']}>
-          <Button type="button" style='notice-learn-more'>Learn more</Button>
-          <Button type="button" style='notice-favorite'>
+          <Button
+            type="button"
+            style="notice-learn-more"
+            handleClick={() => handleOpenModal()}
+          >
+            Learn more
+          </Button>
+          <Button type="button" style="notice-favorite">
             <Icon name="heart" size={18} />
           </Button>
         </div>

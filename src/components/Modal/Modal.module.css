@@ -1,0 +1,18 @@
+:global(.ReactModal__Overlay) {
+  background: var(--overlay-modal-clr) !important;
+}
+
+:global(.ReactModal__Content) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--secondary-txt-clr);
+  border-radius: 30px;
+}
+
+.pet-info-modal {
+  padding: 40px 71px;
+  max-width: 473px;
+  width: 100%;
+}
