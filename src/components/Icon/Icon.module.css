@@ -46,20 +46,38 @@ svg use {
   fill: transparent;
 }
 
-.plus{
+.plus {
   stroke: currentColor;
 }
 
-.chevron-down{
+.chevron-down {
   stroke: currentColor;
   fill: var(--secondary-txt-clr);
 }
 
-.star{
+.star.notice {
+  position: static;
   fill: var(--rating-clr);
 }
 
-.heart{
+.heart {
   fill: transparent;
   stroke: currentColor;
+}
+
+.star{
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: none;
+}
+
+.star.empty use{
+  fill: var(--pagination-disable-clr);
+  stroke: transparent;
+}
+
+.star.filled {
+  fill: var(--rating-clr);
+  stroke: transparent;
 }

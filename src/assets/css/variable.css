@@ -28,5 +28,5 @@
   --icon-edit-bg-clr: #fbe7c1;
 
   --transition-time: 0.25s;
-  --transition-func: ease-in;
+  --transition-func: ease-in-out;
 }

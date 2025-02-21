@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { initialState } from './initialState.js';
-import { getNotices } from './operation.js';
+import { getNoticeById, getNotices } from './operation.js';
 
 const noticesSlice = createSlice({
   name: 'notices',
@@ -11,10 +11,17 @@ const noticesSlice = createSlice({
     },
   },
   extraReducers: builder =>
-    builder.addCase(getNotices.fulfilled, (state, { payload }) => {
-      state.notices = payload.results;
-      state.totalPages = payload.totalPages;
-    }),
+    builder
+      .addCase(getNotices.fulfilled, (state, { payload }) => {
+        state.notices = payload.results;
+        state.totalPages = payload.totalPages;
+      })
+      .addCase(getNoticeById.fulfilled, (state, action) => {
+        state.notice = action.payload;
+      })
+      .addCase(getNoticeById.pending, state => {
+        state.notice = null;
+      }),
 });
 
 export const { setPage } = noticesSlice.actions;

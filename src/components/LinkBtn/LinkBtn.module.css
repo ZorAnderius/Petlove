@@ -82,3 +82,17 @@
   color: var(--secondary-txt-clr);
   background-color: var(--primary-clr);
 }
+
+.notice-contact {
+  display: block;
+  padding: 14px;
+  text-align: center;
+  background-color: var(--secondary-clr);
+  color: var(--primary-clr);
+  border-radius: 30px;
+  transition: background-color var(--transition-time) var(--transition-func);
+}
+
+.notice-contact:is(:hover, :focus) {
+  background-color: var(--icon-edit-bg-clr);
+}

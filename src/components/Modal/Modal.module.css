@@ -1,18 +1,55 @@
 :global(.ReactModal__Overlay) {
   background: var(--overlay-modal-clr) !important;
+  opacity: 0;
+  transition: opacity var(--transition-time) var(--transition-func);
+}
+
+:global(.ReactModal__Overlay--after-open) {
+  opacity: 1;
+}
+
+:global(.ReactModal__Overlay--before-close) {
+  opacity: 0;
+}
+
+:global(.ReactModal__Content--before-open) {
+  opacity: 0;
 }
 
 :global(.ReactModal__Content) {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.5);
   background-color: var(--secondary-txt-clr);
   border-radius: 30px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity var(--transition-time) var(--transition-func),
+    transform var(--transition-time) var(--transition-func);
 }
 
-.pet-info-modal {
+:global(.ReactModal__Content) > button {
+  opacity: 0;
+  transition: opacity var(--transition-time) var(--transition-func) 0.2s;
+}
+
+:global(.ReactModal__Content--after-open) {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+:global(.ReactModal__Content--after-open) > button {
+  opacity: 1;
+}
+
+:global(.ReactModal__Content--after-open).notice {
   padding: 40px 71px;
   max-width: 473px;
   width: 100%;
+}
+
+:global(.ReactModal__Content--before-close) {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
 }

@@ -9,9 +9,15 @@ import { openModal } from '../../redux/modal/slice.js';
 
 const NoticesItem = ({ notice }) => {
   const dispatch = useDispatch();
+  console.log(notice._id);
 
   const handleOpenModal = () => {
-    dispatch(openModal({ content: '', contentStyle: 'pet-info-modal' }));
+    dispatch(
+      openModal({
+        contentData: { id: notice._id },
+        type: 'notice',
+      }),
+    );
   };
   const {
     species,
@@ -36,7 +42,7 @@ const NoticesItem = ({ notice }) => {
             {title}
           </Title>
           <div className={styles['rating-container']}>
-            <Icon name="star" size={16} />
+            <Icon name="star" type='notice' size={16} />
             <p>{popularity}</p>
           </div>
         </div>

@@ -1,0 +1,14 @@
+.rating-container {
+  display: flex;
+  gap: 4px;
+}
+
+.star-container {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+
+.rating-container .star.filled {
+  width: var(--fill-rating);
+}
