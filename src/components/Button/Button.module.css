@@ -147,3 +147,20 @@
   border: none;
   background-color: transparent;
 }
+
+.favorite-btn {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 30px;
+  border: none;
+  background: var(--primary-clr);
+  color: var(--secondary-txt-clr);
+  transition: background-color var(--transition-time) var(--transition-func);
+}
+
+.favorite-btn:is(:hover, :focus) {
+  background-color: var(--btn-hover-clr);
+}

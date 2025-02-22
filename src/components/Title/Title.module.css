@@ -50,3 +50,10 @@
   text-wrap: wrap;
   height: 24px;
 }
+
+.notice-modal {
+  color: var(--text-comment-clr);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.33;
+}

@@ -10,6 +10,7 @@
   width: 100%;
   max-height: 150px;
   height: 100%;
+  margin-bottom: 16px;
 }
 
 .img-thumb {
@@ -34,13 +35,84 @@
   background-color: var(--secondary-clr);
   color: var(--primary-clr);
   text-transform: capitalize;
-  margin-bottom: 16px;
 }
 
 .title-rating-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
+.rating-container {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  color: var(--text-comment-clr);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.43;
+}
 
+.pet-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pet-info-list {
+  display: flex;
+  gap: 27px;
+}
+
+.pet-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  text-transform: capitalize;
+}
+
+.pet-info-item p:first-child {
+  color: var(--inactive-secondary--txt-clr);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.2px;
+}
+
+.pet-info-item p:last-child {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.17;
+  letter-spacing: -0.24px;
+}
+
+.pet-comment {
+  width: 100%;
+  overflow: hidden;
+  color: var(--text-comment-clr);
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: -0.28px;
+  margin-bottom: 32px;
+}
+
+.pet-price {
+  color: var(--text-comment-clr);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.33;
+}
+
+.modal-btn-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}

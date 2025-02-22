@@ -43,38 +43,38 @@ const ModalNotice = ({ id }) => {
         <span className={styles['notice-category']}>{category}</span>
       </div>
       <div className={styles['title-rating-container']}>
-        <Title value={2} style="notice">
+        <Title value={2} style="notice-modal">
           {title}
         </Title>
-        <div className={styles['']}>
-          <Rating rating={4.2} />
+        <div className={styles['rating-container']}>
+          <Rating rating={popularity} />
           <p>{popularity}</p>
         </div>
       </div>
-      <div className={styles['']}>
-        <ul className={styles['']}>
-          <li className={styles['']}>
+      <div className={styles['pet-info-container']}>
+        <ul className={styles['pet-info-list']}>
+          <li className={styles['pet-info-item']}>
             <p>Name</p>
             <p>{name}</p>
           </li>
-          <li className={styles['']}>
+          <li className={styles['pet-info-item']}>
             <p>Birthday</p>
             <p>{formattedDateWithSeparator(birthday, '.')}</p>
           </li>
-          <li className={styles['']}>
+          <li className={styles['pet-info-item']}>
             <p>Sex</p>
             <p>{sex}</p>
           </li>
-          <li className={styles['']}>
+          <li className={styles['pet-info-item']}>
             <p>Species</p>
             <p>{species}</p>
           </li>
         </ul>
-        <p className={styles['']}>{comment}</p>
-        <p className={styles['']}>{price ? formatPrice(price) : 'Free'}</p>
+        <p className={styles['pet-comment']}>{comment}</p>
+        <p className={styles['pet-price']}>{price ? formatPrice(price) : 'Free'}</p>
       </div>
-      <div className={styles['']}>
-        <Button type="button">
+      <div className={styles['modal-btn-container']}>
+        <Button type="button" style='favorite-btn'>
           <p>Add to</p>
           <Icon name="heart" size={18} />
         </Button>

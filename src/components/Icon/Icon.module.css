@@ -55,10 +55,6 @@ svg use {
   fill: var(--secondary-txt-clr);
 }
 
-.star.notice {
-  position: static;
-  fill: var(--rating-clr);
-}
 
 .heart {
   fill: transparent;
@@ -83,4 +79,12 @@ svg use {
 .star.filled {
   fill: var(--rating-clr);
   stroke: transparent;
+}
+
+
+.star.notice {
+  position: static;
+  fill: var(--rating-clr);
+  transform: translateY(0);
+  width: auto;
 }
