@@ -65,14 +65,17 @@ svg use {
   stroke: currentColor;
 }
 
-.star{
+.star {
   position: absolute;
-  top: 0;
+  width: 100%;
+  height: 100%;
+  top: 50%;
   left: 0;
+  transform: translateY(-50%);
   fill: none;
 }
 
-.star.empty use{
+.star.empty use {
   fill: var(--pagination-disable-clr);
   stroke: transparent;
 }
