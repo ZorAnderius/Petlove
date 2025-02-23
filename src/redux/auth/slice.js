@@ -1,6 +1,6 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { initialState } from './initialState.js';
-import { loginUser, registerUser } from './operation.js';
+import { loginUser, logOut, registerUser } from './operation.js';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -13,13 +13,19 @@ const authSlice = createSlice({
     },
   },
   extraReducers: builder =>
-    builder.addMatcher(
-      isAnyOf(registerUser.fulfilled, loginUser.fulfilled),
-      (state, action) => {
-        state.token = action.payload;
-        state.isLoggedIn = true;
-      },
-    ),
+    builder
+      .addCase(logOut.fulfilled, state => {
+        state.token = '';
+        state.isLoggedIn = false;
+        state.currentUser = {};
+      })
+      .addMatcher(
+        isAnyOf(registerUser.fulfilled, loginUser.fulfilled),
+        (state, action) => {
+          state.token = action.payload;
+          state.isLoggedIn = true;
+        },
+      ),
 });
 
 export const { resetAuthState } = authSlice.actions;

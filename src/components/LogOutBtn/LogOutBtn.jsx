@@ -1,8 +1,12 @@
+import { useDispatch } from 'react-redux';
 import Button from '../Button/Button.jsx';
+import { logOut } from '../../redux/auth/operation.js';
 
 const LogOutBtn = ({ style }) => {
+  const dispatch = useDispatch();
+
   const handleLogOut = () => {
-    console.log('log out');
+    dispatch(logOut());
   };
   return (
     <Button

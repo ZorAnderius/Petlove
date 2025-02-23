@@ -25,8 +25,11 @@ const Header = () => {
         >
           <Logo location={isHome} />
           <Nav location={isHome} />
-          {!isLoggedIn && <AuthNav location={isHome} />}
-          <UserNav location={isHome} />
+          {!isLoggedIn ? (
+            <AuthNav location={isHome} />
+          ) : (
+            <UserNav location={isHome} />
+          )}
         </nav>
       </Container>
     </header>

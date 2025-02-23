@@ -58,12 +58,14 @@ export const currentUserFullInfo = createAsyncThunk(
 
 export const logOut = createAsyncThunk(
   'auth/logout',
-  async (_, { rejectWithValue, dispatch }) => {
+  async (_, { rejectWithValue, dispatch, getState }) => {
     try {
-      clearToken();
+      const token = getState().auth.token;
+      setToken(token);
       const response = await api.post('/users/signout');
       if (response.status === 204 || response.status === 200) {
-        dispatch(resetAuthState);
+        dispatch(resetAuthState());
+        clearToken();
       } else {
         throw new Error('Loggout failed');
       }
