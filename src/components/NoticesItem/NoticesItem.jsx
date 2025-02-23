@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { formattedDateWithSeparator } from '../../helpers/formatter/formatDate.js';
 import { formatPrice } from '../../helpers/formatter/formatPrice.js';
 import Button from '../Button/Button.jsx';
@@ -6,18 +6,24 @@ import Icon from '../Icon/Icon.jsx';
 import Title from '../Title/Title.jsx';
 import styles from './NoticesItem.module.css';
 import { openModal } from '../../redux/modal/slice.js';
+import { selectIsLoggedIn } from '../../redux/auth/selector.js';
+import { modalContent } from '../../helpers/constants/modalContent.js';
 
 const NoticesItem = ({ notice }) => {
   const dispatch = useDispatch();
-  console.log(notice._id);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
 
   const handleOpenModal = () => {
-    dispatch(
-      openModal({
-        contentData: { id: notice._id },
-        type: 'notice',
-      }),
-    );
+    const modalData = isLoggedIn
+      ? {
+          contentData: { id: notice._id },
+          type: modalContent.notice,
+        }
+      : {
+          contentData: null,
+          type: modalContent.attention,
+        };
+    dispatch(openModal(modalData));
   };
   const {
     species,
@@ -42,7 +48,7 @@ const NoticesItem = ({ notice }) => {
             {title}
           </Title>
           <div className={styles['rating-container']}>
-            <Icon name="star" type='notice' size={16} />
+            <Icon name="star" type="notice" size={16} />
             <p>{popularity}</p>
           </div>
         </div>

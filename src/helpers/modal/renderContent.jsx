@@ -1,3 +1,4 @@
+import ModalAttention from '../../components/ModalAttention/ModalAttention.jsx';
 import ModalNotice from '../../components/ModalNotice/ModalNotice.jsx';
 import { modalContent } from '../constants/modalContent.js';
 
@@ -6,7 +7,7 @@ export const renderContent = (type, contentData) => {
     case modalContent.notice:
       return <ModalNotice {...contentData} />;
     case modalContent.attention:
-      return <h1>Attention</h1>;
+      return <ModalAttention {...contentData} />;
     case modalContent.approveAction:
       return <h1>Action Approval</h1>;
     case modalContent.editUser:

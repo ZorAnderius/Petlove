@@ -57,3 +57,11 @@
   font-weight: 700;
   line-height: 1.33;
 }
+
+.attention {
+  color: var(--primary-clr);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.17;
+  letter-spacing: -0.72px;
+}

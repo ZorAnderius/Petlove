@@ -1,0 +1,57 @@
+.attention-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-thumb {
+  max-width: 80px;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: var(--secondary-clr);
+}
+
+.img-pet-avatar {
+  width: 44px;
+  height: 44px;
+  background-image: image-set(
+    url('../../assets/images/pets/dog_1x.avif') type('image/avif'),
+    url('../../assets/images/pets/dog_1x.webp') type('image/webp'),
+    url('../../assets/images/pets/dog_1x.png') type('image/png')
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (min-resolution: 192dpi) {
+  .img-pet-avatar {
+    background-image: image-set(
+      url('../../assets/images/pets/dog_2x.avif') type('image/avif'),
+      url('../../assets/images/pets/dog_2x.webp') type('image/webp'),
+      url('../../assets/images/pets/dog_2x.png') type('image/png')
+    );
+  }
+}
+
+.attention-txt {
+  color: var(--text-comment-clr);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: -0.28px;
+}
+
+.btn-container {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  padding: 0 29px;
+}

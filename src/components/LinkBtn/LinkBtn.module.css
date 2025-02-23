@@ -11,7 +11,16 @@
     color var(--transition-time) var(--transition-func);
 }
 
-.login {
+.login-attention {
+  padding: 14px 0;
+  text-align: center;
+  color: var(--secondary-txt-clr);
+  transition: background-color var(--transition-time) var(--transition-func),
+    color var(--transition-time) var(--transition-func);
+}
+
+.login,
+.login-attention {
   background-color: var(--primary-clr);
   border: none;
 }
@@ -20,7 +29,7 @@
   border: 1px solid var(--border-home-clr);
 }
 
-.login:is(:hover, :focus) {
+.login:is(:hover, :focus) .login-attention:is(:hover, :focus) {
   background-color: var(--btn-hover-clr);
 }
 
